@@ -61,7 +61,7 @@
         </strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
-          <b><?php echo $_settings->info('short_name') ?> (by: <a href="https://github.com/priyasonkar03" target="blank">priyasonkar03</a> )</b> v1.0
+          <b><?php echo $_settings->info('short_name') ?> (by: <a href="https://github.com/priyasonkar03" target="blank">Priya Sonkar</a> )</b> v1.0
         </div>
       </footer>
     </div>
