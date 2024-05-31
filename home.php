@@ -1,35 +1,73 @@
 <style>
-    .car-cover{
-        width:10em;
+    .car-cover {
+    width: 100%;
+    max-width: 10em;
+}
+
+.car-item .col-auto {
+    max-width: calc(100% - 12em) !important;
+}
+
+.car-item:hover {
+    transform: translate(0, -4px);
+    background: #a5a5a521;
+}
+
+.banner-img-holder {
+    height: 25vh !important;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-img {
+    object-fit: scale-down;
+    height: 100%;
+    width: 100%;
+    transition: transform .3s ease-in;
+}
+
+.car-item:hover .banner-img {
+    transform: scale(1.3);
+}
+
+.welcome-content img {
+    margin: .5em;
+    max-width: 100%;
+    height: auto;
+}
+
+.callout {
+    padding: 1em;
+    border: 1px solid #007bff;
+    border-radius: .25em;
+    background: #ffffff;
+    margin-bottom: 1em;
+}
+
+@media (max-width: 768px) {
+    .banner-img-holder {
+        height: 30vh !important;
     }
-    .car-item .col-auto{
-        max-width: calc(100% - 12em) !important;
+
+    .callout h3 {
+        font-size: 1.25em;
     }
-    .car-item:hover{
-        transform:translate(0, -4px);
-        background:#a5a5a521;
+}
+
+@media (max-width: 576px) {
+    .banner-img-holder {
+        height: 35vh !important;
     }
-    .banner-img-holder{
-        height:25vh !important;
-        width: calc(100%);
-        overflow: hidden;
+
+    .callout h3 {
+        font-size: 1em;
     }
-    .banner-img{
-        object-fit:scale-down;
-        height: calc(100%);
-        width: calc(100%);
-        transition:transform .3s ease-in;
-    }
-    .car-item:hover .banner-img{
-        transform:scale(1.3)
-    }
-    .welcome-content img{
-        margin:.5em;
-    }
+}
+
 </style>
 <!-- Welcom content -->
 <div class="col-lg-12 py-2">
-    <div class="contain-fluid">
+    <div class="container-fluid">
         <div class="card card-outline card-lightblue shadow rounded-0">
             <div class="card-body rounded-0">
                 <div class="container-fluid">
@@ -45,17 +83,14 @@
 </div>
 <!-- services -->
 <div class="col-lg-12 py-2">
-    <div class="contain-fluid">
+    <div class="container-fluid">
         <div class="card card-outline card-lightblue shadow rounded-0">
             <div class="card-body rounded-0">
                 <div class="container-fluid">
                     <h3 class="text-center">Our Services</h3>
                     <hr>
-                    <!-- <div class="welcome-content">
-                        <?php include("welcome.html") ?>
-                    </div> -->
                     <div class="container-fluid">
-                        <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 gx-2 gy-2">
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-2 gy-2">
                             <?php 
                                 $services = $conn->query("SELECT * FROM `service_list` where delete_flag = 0 order by `service` asc");
                                 while($row = $services->fetch_assoc()):
@@ -80,38 +115,38 @@
 </div>
 <!-- about us -->
 <div class="col-lg-12 py-2">
-    <div class="contain-fluid">
+    <div class="container-fluid">
         <div class="card card-outline card-lightblue shadow rounded-0">
             <div class="card-body rounded-0">
                 <div class="container-fluid">
                     <h3 class="text-center">About us</h3>
                     <hr>
-                    <div class="col-12">
-                        <div class="row my-5 ">
-                            <div class="col-md-5">
-                                <div class="card card-outline card-navy rounded-0 shadow">
-                                    <div class="card-header">
-                                        <h4 class="card-title">Contact</h4>
-                                    </div>
-                                    <div class="card-body rounded-0">
-                                        <dl>
-                                            <dt class="text-muted"><i class="fa fa-envelope"></i> Email</dt>
-                                            <dd class="pr-4"><?= $_settings->info('email') ?></dd>
-                                            <dt class="text-muted"><i class="fa fa-phone"></i> Contact #</dt>
-                                            <dd class="pr-4"><?= $_settings->info('contact') ?></dd>
-                                            <dt class="text-muted"><i class="fa fa-map-marked-alt"></i> Location</dt>
-                                            <dd class="pr-4"><?= $_settings->info('address') ?></dd>
-                                            
-                                        </dl>
-                                    </div>
-                                    <!-- <div class="card-body rounded-0" >
-                                    <i class="fa-brands fa-facebook"></i>
-                                    </div> -->
+                    <div class="row my-5">
+                        <div class="col-md-5">
+                            <div class="card card-outline card-navy rounded-0 shadow">
+                                <div class="card-header">
+                                    <h4 class="card-title">Contact</h4>
+                                </div>
+                                <div class="card-body rounded-0">
+                                    <dl>
+                                        <dt class="text-muted"><i class="fa fa-envelope"></i> Email</dt>
+                                        <dd class="pr-4"><?= $_settings->info('email') ?></dd>
+                                        <dt class="text-muted"><i class="fa fa-phone"></i> Contact #</dt>
+                                        <dd class="pr-4"><?= $_settings->info('contact') ?></dd>
+                                        <dt class="text-muted"><i class="fa fa-map-marked-alt"></i> Location</dt>
+                                        <dd class="pr-4"><?= $_settings->info('address') ?></dd>
+                                        <div>
+                                        <p>Diractors on company<br> 
+                                        <b>Mrs. Mo. Rasid</b><br>
+                                        <b>Miss. Shilpi Soni</b></p>
+                                        </div>        
+                                    </dl>
                                 </div>
                             </div>
-                            <div class="col-md-7">
-                                <div class="card rounded-0 card-outline card-navy shadow" >
-                                    <div class="card-body rounded-0">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card rounded-0 card-outline card-navy shadow">
+                                <div class="card-body rounded-0">
                                     <!-- for map -->
                                     <div class="container mt-5">
                                         <h1 class="text-center">Our Location</h1>
@@ -132,8 +167,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- for map end-->
-                                    </div>
+                                    <!-- for map end -->
                                 </div>
                             </div>
                         </div>

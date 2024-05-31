@@ -53,9 +53,19 @@
       <div class="content-wrapper pt-5" >
         <?php if($page == "home" || $page == "about_us"): ?>
           <div id="header" class="shadow mb-4">
-              <div class="d-flex justify-content-center h-100 w-100 align-items-center flex-column px-3">
+              <!-- <div class="d-flex justify-content-center h-100 w-100 align-items-center flex-column px-3">
                   <h1 class="w-100 text-center site-title px-5"><?php echo $_settings->info('name') ?></h1>
-                  <!-- <h3 class="w-100 text-center px-5 site-subtitle"><?php echo $_settings->info('name') ?></h3> -->
+                  this is before comment -- <h3 class="w-100 text-center px-5 site-subtitle"><?php echo $_settings->info('name') ?></h3> 
+              </div> -->
+              <div class="d-flex justify-content-center h-100 w-100 align-items-center flex-column px-3">
+              <h3 class="w-100 text-right site-title px-5">  Computer :) Care</h3>
+              <div class="text-right mt-5 w-100 " style="color: #f8f9fa;">
+              <h5>We Provide Hardware Services</h5>
+              <p><i>It's National IT Professionals Day!<br/>
+                Our IT team cares for your hardware and your buisness success.<br>
+                Whether you're onboarding an employee, storing extra devices, <br>
+                or need a hand in-house, we've got you covered!<br>
+              </i></p></div>
               </div>
           </div>
         <?php endif; ?>
