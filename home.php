@@ -66,7 +66,7 @@
 
 </style>
 <!-- Welcom content -->
-<div class="col-lg-12 py-2">
+<!-- <div class="col-lg-12 py-2">
     <div class="container-fluid">
         <div class="card card-outline card-lightblue shadow rounded-0">
             <div class="card-body rounded-0">
@@ -80,41 +80,10 @@
             </div>
         </div>
     </div>
-</div>
-<!-- services -->
-<div class="col-lg-12 py-2">
-    <div class="container-fluid">
-        <div class="card card-outline card-lightblue shadow rounded-0">
-            <div class="card-body rounded-0">
-                <div class="container-fluid">
-                    <h3 class="text-center">Our Services</h3>
-                    <hr>
-                    <div class="container-fluid">
-                        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-2 gy-2">
-                            <?php 
-                                $services = $conn->query("SELECT * FROM `service_list` where delete_flag = 0 order by `service` asc");
-                                while($row = $services->fetch_assoc()):
-                            ?>
-                                <div class="col">
-                                    <div class="callout border-primary rounded-0 shadow">
-                                        <h3><b><?= $row['service'] ?></b></h3>
-                                        <div class="form-group">
-                                            <span class="float-right"><i class="fa fa-tags text-muted"></i> <?= number_format($row['cost'],2) ?></span>
-                                        </div>
-                                        <p class="text-muted"><small><?= str_replace("\n","<br/>",$row['description']) ?></small></p>
-                                    </div>
-                                </div>
-                            <?php endwhile; ?>
-                            <?php ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</div> -->
+
 <!-- about us -->
-<div class="col-lg-12 py-2">
+<!-- <div class="col-lg-12 py-2">
     <div class="container-fluid">
         <div class="card card-outline card-lightblue shadow rounded-0">
             <div class="card-body rounded-0">
@@ -147,7 +116,7 @@
                         <div class="col-md-7">
                             <div class="card rounded-0 card-outline card-navy shadow">
                                 <div class="card-body rounded-0">
-                                    <!-- for map -->
+                                    <!-- for map 
                                     <div class="container mt-5">
                                         <h1 class="text-center">Our Location</h1>
                                         <div class="row justify-content-center">
@@ -167,7 +136,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- for map end -->
+                                    <!-- for map end 
                                 </div>
                             </div>
                         </div>
@@ -176,4 +145,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
